@@ -21,35 +21,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!--<androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#A65151"
-            android:textAlignment="gravity"
-            android:visibility="visible"
-            app:tabIndicatorColor="@color/black"
-            app:tabMode="fixed"/>
-    <com.google.android.material.tabs.TabLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        android:textAlignment="gravity"
-        android:visibility="visible"
-        app:tabIndicatorColor="@color/black"
-        app:tabMode="fixed"/>
-
-    </androidx.viewpager.widget.ViewPager>-->
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonMovies"
         android:layout_width="214dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -66,7 +39,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/favorites"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/buttonMovies"
         app:layout_constraintTop_toBottomOf="@+id/textUser" />
 
     <androidx.fragment.app.FragmentContainerView

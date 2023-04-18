@@ -17,6 +17,11 @@ class Movies2Fragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         viewBinding = FragmentFMoviesSecondBinding.inflate(layoutInflater)
+
+
+
+
+
         return viewBinding.root
     }
 }

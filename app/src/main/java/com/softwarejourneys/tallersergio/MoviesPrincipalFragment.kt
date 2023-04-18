@@ -33,8 +33,12 @@ class MoviesPrincipalFragment : Fragment() {
 
         childFragmentManager.beginTransaction().add(viewBinding.fragmentContainer.id, moviesSecond).commit()
 
-        val bottom= viewBinding.buttonFavorites.setOnClickListener{
-            changeFragment()
+        val bottomFavorite= viewBinding.buttonFavorites.setOnClickListener{
+            changeFragmentFavorite()
+        }
+
+        val bottomMovies= viewBinding.buttonMovies.setOnClickListener{
+            changeFragmentMovies()
         }
 
 
@@ -42,12 +46,20 @@ class MoviesPrincipalFragment : Fragment() {
         return view
     }
 
-    fun changeFragment(){
+    fun changeFragmentFavorite(){
         val moviesFavFragment=FavoritesFragment()
 
         val transaction= childFragmentManager.beginTransaction()
 
         transaction.replace(viewBinding.fragmentContainer.id, moviesFavFragment)
+        transaction.commit()
+    }
+    fun changeFragmentMovies(){
+        val moviesFragment= Movies2Fragment()
+
+        val transaction= childFragmentManager.beginTransaction()
+
+        transaction.replace(viewBinding.fragmentContainer.id, moviesFragment)
         transaction.commit()
     }
 
