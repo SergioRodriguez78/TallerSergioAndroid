@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TallerSergio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragmento">fragmento</string>
+    <string name="fragmento_peliculas">-Fragmento peliculas</string>
+    <string name="ingresa_tu_usuario">Ingresa tu usuario</string>
+    <string name="login">login</string>
+    <string name="loginText">Login</string>
+    <string name="ingresa_tu_contrase_a">ingresa tu contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="peliculas">Peliculas</string>
+    <string name="films">Films</string>
+    <string name="favorites">Favorites</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginFragment">
+
+        <TextView
+            android:id="@+id/textUser"
+            android:layout_width="match_parent"
+            android:layout_height="433dp"
+            android:gravity="center"
+            android:text="@string/loginText"
+            android:textSize="36sp" />
+
+
+        <EditText
+            android:id="@+id/IngresoUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:autofillHints="username"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:hint="@string/ingresa_tu_usuario"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/IngresoContraseña"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:autofillHints="username"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:hint="@string/ingresa_tu_contrase_a"
+            android:inputType="textPassword"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/buttonChange"
+            android:layout_width="246dp"
+            android:layout_height="94dp"
+            android:layout_gravity="center_horizontal"
+            android:onClick="changeFragment"
+            android:text="@string/ingresar"
+            android:textSize="24sp" />
+
+</LinearLayout>
