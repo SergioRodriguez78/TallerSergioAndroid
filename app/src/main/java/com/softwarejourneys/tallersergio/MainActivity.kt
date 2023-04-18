@@ -13,13 +13,17 @@ class MainActivity : AppCompatActivity() {
         viewBinding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        //iniciar fragmento de login
-        val loginFragment=  LoginFragment()
+        if (savedInstanceState == null) {
+            //iniciar fragmento de login
 
-        //inicia fragmento de movies primero
-        val MFirstFragment=  MoviesPrincipalFragment()
+            val loginFragment = LoginFragment()
 
-        //añadir fragmentos al manager
-        supportFragmentManager.beginTransaction().add(viewBinding.principal.id,loginFragment).commit()
+            //inicia fragmento de movies primero
+            val MFirstFragment = MoviesPrincipalFragment()
+
+            //añadir fragmentos al manager
+            supportFragmentManager.beginTransaction().add(viewBinding.principal.id, loginFragment)
+                .commit()
+        }
     }
 }

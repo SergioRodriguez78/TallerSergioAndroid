@@ -36,7 +36,7 @@ class LoginFragment : Fragment() {
     fun changeFragment(){
         val moviesPrincipal= MoviesPrincipalFragment()
 
-        val transaction= parentFragmentManager.beginTransaction()
+        val transaction= requireActivity().supportFragmentManager.beginTransaction()
 
         transaction.replace(R.id.principal,moviesPrincipal)
         transaction.commit()
