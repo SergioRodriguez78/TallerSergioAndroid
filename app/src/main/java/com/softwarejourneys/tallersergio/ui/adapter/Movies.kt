@@ -8,8 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
-data class Movies(var ImagenUrl: String, var name: String, var duration: Int, var favorito: Boolean)
+import com.softwarejourneys.tallersergio.model.Movies
 
 
 class MoviesAdapter(private val movies: List<Movies>) :
@@ -34,13 +33,13 @@ class MoviesAdapter(private val movies: List<Movies>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movie = movies[position]
 
-        Glide.with(holder.imageUrl.context).load(movie.ImagenUrl).override(500, 500).into(holder.imageUrl)
+        Glide.with(holder.imageUrl.context).load(movie.ImagenUrl).override(500, 500)
+            .into(holder.imageUrl)
 
         holder.nameMovie.text = movie.name
         holder.durationMovie.text = movie.duration.toString()
 
         holder.checkBox.isChecked = movie.favorito
-
 
 
     }

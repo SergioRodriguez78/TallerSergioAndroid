@@ -1,8 +1,8 @@
-package com.softwarejourneys.tallersergio
+package com.softwarejourneys.tallersergio.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.softwarejourneys.tallersergio.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding= ActivityMainBinding.inflate(layoutInflater)
+        viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
         if (savedInstanceState == null) {
@@ -26,37 +26,38 @@ class MainActivity : AppCompatActivity() {
             //añadir fragmentos al manager
             supportFragmentManager.beginTransaction().add(viewBinding.principal.id, loginFragment)
                 .commit()
-            Log.i("pruebaS","En el onCreate del main")
+            Log.i("pruebaS", "En el onCreate del main")
         }
     }
+
     override fun onStart() {
         super.onStart()
-        Log.i("pruebaS","En el start del main")
+        Log.i("pruebaS", "En el start del main")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.i("pruebaS","En el onresume del main")
+        Log.i("pruebaS", "En el onresume del main")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.i("pruebaS","En el pause del main")
+        Log.i("pruebaS", "En el pause del main")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.i("pruebaS","En el stop del main")
+        Log.i("pruebaS", "En el stop del main")
     }
 
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("pruebaS","En el destroy del main")
+        Log.i("pruebaS", "En el destroy del main")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.i("pruebaS","En el OnRestart del main")
+        Log.i("pruebaS", "En el OnRestart del main")
     }
 }
