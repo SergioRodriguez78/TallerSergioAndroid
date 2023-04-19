@@ -3,27 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".FavoritesFragment"
     android:orientation="vertical">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_width="72dp"
+        tools:layout_height="200sp"
         android:layout_marginTop="12dp"
-        android:src="@color/teal_700"
-        app:ends="parent"
-
+        android:contentDescription="TODO"
+        android:src="@color/purple_200"
+        app:layout_constraintEnd_toStartOf="@+id/nameView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="6dp"
         android:layout_weight="1"
         android:text="nombre"
@@ -32,10 +34,12 @@
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/durationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="19dp"
         android:layout_weight="1"
         android:text="duracion"
@@ -44,15 +48,11 @@
         app:layout_constraintStart_toEndOf="@id/nameView"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <androidx.appcompat.widget.SwitchCompat
+    <CheckBox
         android:id="@+id/switchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/durationView"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

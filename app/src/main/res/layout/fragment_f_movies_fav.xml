@@ -10,9 +10,8 @@
 
     <TextView
         android:id="@+id/imageMovie"
-        android:layout_width="88dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
         android:layout_weight="1"
         android:text="Imagen"
         android:textSize="12sp"
@@ -22,9 +21,8 @@
 
     <TextView
         android:id="@+id/nameMovie"
-        android:layout_width="109dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
         android:layout_weight="1"
         android:text="nombre"
         android:textSize="12sp"
@@ -34,9 +32,8 @@
 
     <TextView
         android:id="@+id/durationMovie"
-        android:layout_width="94dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="19dp"
         android:layout_weight="1"
         android:text="duracion"
         android:textSize="12sp"
@@ -46,7 +43,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="82dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Favorito"
