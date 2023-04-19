@@ -54,4 +54,9 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i("pruebaS","En el destroy del main")
     }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("pruebaS","En el OnRestart del main")
+    }
 }

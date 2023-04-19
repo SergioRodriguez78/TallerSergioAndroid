@@ -50,4 +50,8 @@ class WelcomeActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("pruebaS","En el OnRestart ")
+    }
 }

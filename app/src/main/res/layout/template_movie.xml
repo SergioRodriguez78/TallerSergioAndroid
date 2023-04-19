@@ -14,18 +14,18 @@
         android:layout_width="80dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
         android:contentDescription="TODO"
         android:src="@color/purple_200"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/nameView"
-        android:layout_width="47dp"
+        android:layout_width="62dp"
         android:layout_height="46dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:layout_weight="1"
         android:ellipsize="end"
         android:maxLines="3"
@@ -35,17 +35,15 @@
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/durationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="19dp"
         android:layout_weight="1"
         android:text="duracion"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/switchView"
         app:layout_constraintStart_toEndOf="@id/nameView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,7 +51,8 @@
         android:id="@+id/switchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
