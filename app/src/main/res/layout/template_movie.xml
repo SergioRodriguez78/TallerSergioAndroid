@@ -10,27 +10,28 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_width="72dp"
-        tools:layout_height="200sp"
-        android:layout_marginTop="12dp"
+
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="TODO"
         android:src="@color/purple_200"
-        app:layout_constraintEnd_toStartOf="@+id/nameView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nameView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="6dp"
         android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="3"
         android:text="nombre"
+
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/durationView"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 

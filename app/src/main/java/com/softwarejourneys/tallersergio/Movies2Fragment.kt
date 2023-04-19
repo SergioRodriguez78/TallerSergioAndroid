@@ -10,7 +10,7 @@ import com.softwarejourneys.tallersergio.databinding.FragmentFMoviesSecondBindin
 
 var movies= listOf<Movies>(Movies("https://www.codingpizza.com/wp-content/uploads/2018/12/GLIDE-CDA9-IG.png","goku",120,false),
     Movies("https://www.codingpizza.com/wp-content/uploads/2018/12/GLIDE-CDA9-IG.png","adsf",70,false),
-    Movies("https://www.codingpizza.com/wp-content/uploads/2018/12/GLIDE-CDA9-IG.png","joker",40,false),
+    Movies("https://www.codingpizza.com/wp-content/uploads/2018/12/GLIDE-CDA9-IG.png","joker",40,true),
 
 );
 class Movies2Fragment : Fragment() {

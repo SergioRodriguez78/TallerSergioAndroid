@@ -6,11 +6,8 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 data class Movies(var ImagenUrl: String, var name: String, var duration: Int, var favorito: Boolean)
 
@@ -23,7 +20,7 @@ class MoviesAdapter(private val movies: List<Movies>) :
         val imageUrl = view.findViewById<ImageView>(R.id.imageView)
         val nameMovie = view.findViewById<TextView>(R.id.nameView)
         val durationMovie = view.findViewById<TextView>(R.id.durationView)
-        val switchMovie = view.findViewById<CheckBox>(R.id.switchView)
+        val checkBox = view.findViewById<CheckBox>(R.id.switchView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,7 +39,7 @@ class MoviesAdapter(private val movies: List<Movies>) :
         holder.nameMovie.text = movie.name
         holder.durationMovie.text = movie.duration.toString()
 
-
+        holder.checkBox.isChecked = movie.favorito
 
 
 
