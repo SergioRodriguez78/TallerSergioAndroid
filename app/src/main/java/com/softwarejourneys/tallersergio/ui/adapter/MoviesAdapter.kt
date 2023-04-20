@@ -1,6 +1,5 @@
 package com.softwarejourneys.tallersergio.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.softwarejourneys.tallersergio.R
-import com.softwarejourneys.tallersergio.databinding.TemplateMovieBinding
 import com.softwarejourneys.tallersergio.model.Movie
-import com.softwarejourneys.tallersergio.viewModel.LogicFavoritesClick
+import com.softwarejourneys.tallersergio.ui.movies.LogicFavoritesClick
 
 
 class MoviesAdapter(private val movies: List<Movie>, private val listener: LogicFavoritesClick) :

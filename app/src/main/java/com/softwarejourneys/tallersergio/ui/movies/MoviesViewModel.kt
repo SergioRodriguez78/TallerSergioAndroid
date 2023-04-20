@@ -1,6 +1,5 @@
-package com.softwarejourneys.tallersergio.viewModel
+package com.softwarejourneys.tallersergio.ui.movies
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -47,7 +46,8 @@ class MoviesViewModel : ViewModel() {
         movie[0].favorite = favorite
 
         if(isFavoriteFragment){
-        _movies.value = UiState.FavoriteMovies(movies = movies.filter { it.favorite })}
+        _movies.value = UiState.FavoriteMovies(movies = movies.filter { it.favorite })
+        }
        //_movies.value = UiState.ListMovies(movies = movies)
     }
 

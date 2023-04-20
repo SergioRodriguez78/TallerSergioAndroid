@@ -11,9 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.softwarejourneys.tallersergio.ui.adapter.MoviesAdapter
 
 import com.softwarejourneys.tallersergio.databinding.FragmentMoviesBinding
-import com.softwarejourneys.tallersergio.viewModel.LogicFavoritesClick
-import com.softwarejourneys.tallersergio.viewModel.MoviesViewModel
-import com.softwarejourneys.tallersergio.viewModel.UiState
 
 
 class MoviesFragment : Fragment(), LogicFavoritesClick {

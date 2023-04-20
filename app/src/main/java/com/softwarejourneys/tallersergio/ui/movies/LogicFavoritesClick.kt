@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.viewModel
+package com.softwarejourneys.tallersergio.ui.movies
 
 interface LogicFavoritesClick {
 
