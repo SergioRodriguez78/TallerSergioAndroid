@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.softwarejourneys.tallersergio.databinding.ActivityMainBinding
+import com.softwarejourneys.tallersergio.ui.login.LoginFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
@@ -20,12 +22,11 @@ class MainActivity : AppCompatActivity() {
 
             val loginFragment = LoginFragment()
 
-            //inicia fragmento de movies primero
-            val MFirstFragment = MoviesPrincipalFragment()
-
             //añadir fragmentos al manager
             supportFragmentManager.beginTransaction().add(viewBinding.principal.id, loginFragment)
                 .commit()
+
+
             Log.i("pruebaS", "En el onCreate del main")
         }
     }

@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.ui
+package com.softwarejourneys.tallersergio.ui.login
 
 import android.content.Context
 import android.os.Bundle
@@ -8,12 +8,40 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.softwarejourneys.tallersergio.R
-import com.softwarejourneys.tallersergio.databinding.FragmentFLoginBinding
+
+import com.softwarejourneys.tallersergio.databinding.FragmentLoginBinding
+import com.softwarejourneys.tallersergio.ui.movies.ContainerMoviesFragment
 
 
 class LoginFragment : Fragment() {
 
-    private lateinit var viewBindingLogin: FragmentFLoginBinding
+    private lateinit var viewBindingLogin: FragmentLoginBinding
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        viewBindingLogin = FragmentLoginBinding.inflate(layoutInflater)
+        val view = viewBindingLogin.root
+        // Inflate the layout for this fragment
+
+
+        viewBindingLogin.buttonChange.setOnClickListener {
+            changeFragment()
+        }
+
+        Log.i("pruebaS", "En el onCreateView del fragmento login")
+        return view
+    }
+
+    private fun changeFragment() {
+        val containerMoviesFragment = ContainerMoviesFragment()
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+
+        transaction.replace(R.id.principal, containerMoviesFragment)
+        transaction.commit()
+
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -24,35 +52,6 @@ class LoginFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         Log.i("pruebaS", "En el onCreate del fragmento login")
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        viewBindingLogin = FragmentFLoginBinding.inflate(layoutInflater)
-        val view = viewBindingLogin.root
-        // Inflate the layout for this fragment
-
-        val bottom = viewBindingLogin.buttonChange.setOnClickListener {
-            changeFragment()
-        }
-
-        Log.i("pruebaS", "En el onCreateView del fragmento login")
-        return view
-
-
-    }
-
-    fun changeFragment() {
-        val moviesPrincipal = MoviesPrincipalFragment()
-
-        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-
-        transaction.replace(R.id.principal, moviesPrincipal)
-        transaction.commit()
-
-
     }
 
     override fun onStart() {

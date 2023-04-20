@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.ui
+package com.softwarejourneys.tallersergio.ui.movies
 
 import android.content.Context
 import android.os.Bundle
@@ -7,12 +7,56 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.softwarejourneys.tallersergio.databinding.FragmentFMoviesFirstBinding
+import com.softwarejourneys.tallersergio.databinding.FragmentContainerMoviesBinding
 
 
-class MoviesPrincipalFragment : Fragment() {
+class ContainerMoviesFragment : Fragment() {
 
-    private lateinit var viewBinding: FragmentFMoviesFirstBinding
+    private lateinit var viewBinding: FragmentContainerMoviesBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        viewBinding = FragmentContainerMoviesBinding.inflate(layoutInflater)
+        // Inflate the layout for this fragment
+        val view = viewBinding.root
+
+
+        //Iniciar movies second
+        val moviesSecond = MoviesFragment()
+
+
+        childFragmentManager.beginTransaction().add(viewBinding.fragmentContainer.id, moviesSecond)
+            .commit()
+
+
+        viewBinding.buttonFavorites.setOnClickListener {
+            changeFragmentFavorite()
+        }
+        viewBinding.buttonMovies.setOnClickListener {
+            changeFragmentMovies()
+        }
+        Log.i("pruebaS", "En el onCreateView del PELICULAS")
+        return view
+    }
+    fun changeFragmentFavorite() {
+        val moviesFavFragment = FavoritesMoviesFragment()
+
+        val transaction = childFragmentManager.beginTransaction()
+
+        transaction.replace(viewBinding.fragmentContainer.id, moviesFavFragment)
+        transaction.commit()
+    }
+
+    fun changeFragmentMovies() {
+        val moviesFragment = MoviesFragment()
+
+        val transaction = childFragmentManager.beginTransaction()
+
+        transaction.replace(viewBinding.fragmentContainer.id, moviesFragment)
+        transaction.commit()
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -23,54 +67,6 @@ class MoviesPrincipalFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         Log.i("pruebaS", "En el onCreate del PELICULAS")
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        viewBinding = FragmentFMoviesFirstBinding.inflate(layoutInflater)
-        // Inflate the layout for this fragment
-        val view = viewBinding.root
-
-
-        //Iniciar movies second
-        val moviesSecond = Movies2Fragment()
-        //Iniciar movies fav
-        val moviesFav = FavoritesFragment()
-
-        childFragmentManager.beginTransaction().add(viewBinding.fragmentContainer.id, moviesSecond)
-            .commit()
-
-        val bottomFavorite = viewBinding.buttonFavorites.setOnClickListener {
-            changeFragmentFavorite()
-        }
-
-        val bottomMovies = viewBinding.buttonMovies.setOnClickListener {
-            changeFragmentMovies()
-        }
-
-
-        Log.i("pruebaS", "En el onCreateView del PELICULAS")
-        return view
-    }
-
-    fun changeFragmentFavorite() {
-        val moviesFavFragment = FavoritesFragment()
-
-        val transaction = childFragmentManager.beginTransaction()
-
-        transaction.replace(viewBinding.fragmentContainer.id, moviesFavFragment)
-        transaction.commit()
-    }
-
-    fun changeFragmentMovies() {
-        val moviesFragment = Movies2Fragment()
-
-        val transaction = childFragmentManager.beginTransaction()
-
-        transaction.replace(viewBinding.fragmentContainer.id, moviesFragment)
-        transaction.commit()
     }
 
     override fun onStart() {

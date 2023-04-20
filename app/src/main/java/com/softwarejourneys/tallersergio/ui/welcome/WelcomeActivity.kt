@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.ui
+package com.softwarejourneys.tallersergio.ui.welcome
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,15 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.softwarejourneys.tallersergio.databinding.ActivityWelcomeBinding
+import com.softwarejourneys.tallersergio.ui.MainActivity
 
 class WelcomeActivity : AppCompatActivity() {
+
     private lateinit var viewBinding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         viewBinding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
@@ -19,6 +22,12 @@ class WelcomeActivity : AppCompatActivity() {
             changeActivity(viewBinding.welcomeButton)
             Log.i("pruebaS", "En el oncreate")
         }
+    }
+
+    fun changeActivity(view: View) {
+        val intent = Intent(this, MainActivity::class.java)
+
+        startActivity(intent)
     }
 
     override fun onStart() {
@@ -44,11 +53,6 @@ class WelcomeActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.i("pruebaS", "En el destroy")
-    }
-
-    fun changeActivity(view: View) {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
     }
 
     override fun onRestart() {

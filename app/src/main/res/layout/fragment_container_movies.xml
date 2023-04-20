@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/teal_700"
     android:orientation="vertical"
-    tools:context=".ui.Movies2Fragment">
+    tools:context=".ui.movies.MoviesFragment">
 
     <TextView
         android:id="@+id/textUser"
@@ -44,7 +44,6 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
-        android:name="com.softwarejourneys.tallersergio.ui.Movies2Fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constrainedHeight="true"
