@@ -13,7 +13,7 @@ import com.softwarejourneys.tallersergio.model.Movie
 import com.softwarejourneys.tallersergio.ui.movies.LogicFavoritesClick
 
 
-class MoviesAdapter(private val movies: List<Movie>, private val listener: LogicFavoritesClick) :
+class MoviesAdapter(private val movies: List<Movie>?, private val listener: LogicFavoritesClick) :
     RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
 
@@ -33,18 +33,18 @@ class MoviesAdapter(private val movies: List<Movie>, private val listener: Logic
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = movies.size
+    override fun getItemCount(): Int = movies?.size!!
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val movie = movies[position]
+        val movie = movies?.get(position)
 
-        Glide.with(holder.imageUrl.context).load(movie.ImageUrl).override(500, 500)
+        Glide.with(holder.imageUrl.context).load(movie?.ImageUrl).override(500, 500)
             .into(holder.imageUrl)
 
-        holder.nameMovie.text = movie.name
-        holder.durationMovie.text = movie.duration.toString()
+        holder.nameMovie.text = movie?.name
+        holder.durationMovie.text = movie?.duration.toString()
 
-        holder.checkBox.isChecked = movie.favorite
+        holder.checkBox.isChecked = movie?.favorite!!
 
         holder.checkBox.setOnClickListener {
             listener.onClickChangeFavorites(movie.id, !movie.favorite)

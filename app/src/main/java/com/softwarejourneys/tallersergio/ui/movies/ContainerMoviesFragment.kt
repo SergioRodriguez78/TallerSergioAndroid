@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.softwarejourneys.tallersergio.databinding.FragmentContainerMoviesBinding
 
 
 class ContainerMoviesFragment : Fragment() {
 
     private lateinit var viewBinding: FragmentContainerMoviesBinding
+    val moviesViewModel: MoviesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,10 +24,10 @@ class ContainerMoviesFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = viewBinding.root
 
+        moviesViewModel.getAllMoviesFirstTime()
 
         //Iniciar movies second
         val moviesSecond = MoviesFragment()
-
 
         childFragmentManager.beginTransaction().add(viewBinding.fragmentContainer.id, moviesSecond)
             .commit()

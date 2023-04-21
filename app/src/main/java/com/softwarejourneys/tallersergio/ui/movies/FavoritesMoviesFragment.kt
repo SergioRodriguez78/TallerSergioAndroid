@@ -25,8 +25,6 @@ class FavoritesMoviesFragment : Fragment(), LogicFavoritesClick {
         viewBinding = FragmentFavoritesMoviesBinding.inflate(layoutInflater)
         viewBinding.recyclerImagen.layoutManager = LinearLayoutManager(requireContext())
 
-
-
         moviesViewModel.getFavoriteMovies()
 
         moviesViewModel.movie.observe(viewLifecycleOwner/*Si fuera una actividad seria this*/) {
@@ -34,7 +32,7 @@ class FavoritesMoviesFragment : Fragment(), LogicFavoritesClick {
                 it ->
             when (it) {
                 is UiState.FavoriteMovies -> {
-                    Log.i("prueba", it.movies.toString())
+                    Log.i("prueba llegada en favoritos frag", it.movies.toString())
 
                     val adapter = MoviesAdapter(it.movies, this)
                     viewBinding.recyclerImagen.adapter = adapter
