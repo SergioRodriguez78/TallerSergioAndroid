@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Imagen"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="nombre"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="duracion"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView3"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Favorito"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent" />

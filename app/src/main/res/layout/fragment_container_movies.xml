@@ -5,9 +5,9 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:background="@color/black"
     android:orientation="vertical"
-    tools:context=".ui.movies.MoviesFragment">
+    tools:context=".ui.movies.fragments.MoviesFragment">
 
     <TextView
         android:id="@+id/textUser"
@@ -24,9 +24,11 @@
     <Button
         android:id="@+id/buttonMovies"
         android:layout_width="214dp"
+        android:backgroundTint="@color/purple_500"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/films"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/buttonFavorites"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textUser" />
@@ -37,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
+        android:textStyle="bold"
         android:text="@string/favorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonMovies"

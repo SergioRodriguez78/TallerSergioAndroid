@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.softwarejourneys.tallersergio.databinding.ActivityWelcomeBinding
-import com.softwarejourneys.tallersergio.model.MoviesService
+import com.softwarejourneys.tallersergio.ui.movies.model.MoviesService
 import com.softwarejourneys.tallersergio.ui.MainActivity
 
 class WelcomeActivity : AppCompatActivity() {

@@ -1,12 +1,16 @@
 package com.softwarejourneys.tallersergio.ui.movies
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.softwarejourneys.tallersergio.model.Movie
-import com.softwarejourneys.tallersergio.model.MoviesService
+import androidx.room.Room
+import com.softwarejourneys.tallersergio.ui.movies.model.AppDatabase
+import com.softwarejourneys.tallersergio.ui.movies.model.Movie
+import com.softwarejourneys.tallersergio.ui.movies.model.MovieRepository
+import com.softwarejourneys.tallersergio.ui.movies.model.MoviesService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -17,19 +21,29 @@ class MoviesViewModel : ViewModel() {
 
     private var _movies = MutableLiveData<UiState>()
     val movie: LiveData<UiState> = _movies
-    private var moviesss: List<Movie>? = null
+    private var movieList: List<Movie>? = null
+    private lateinit var movieRepository:MovieRepository
+    
 
+    fun initDatabase(context:Context){
+        movieRepository= MovieRepository(
+            dataBase= Room.databaseBuilder(context, AppDatabase::class.java, "AppDatabase").build()
+        )
+    }
     fun getAllMoviesFirstTime() {
         viewModelScope.launch(Dispatchers.IO) {
-            moviesss = MoviesService().moviesList()
+
+                movieRepository.insertMoviesInDatabase()
+
+            movieList= movieRepository.getAllFromDatabase()
         }
     }
 
     fun getMovies() {
-        while (moviesss == null) {
+        while (movieList == null) {
             sleep(50)
         }
-        moviesss?.let {
+        movieList?.let {
             _movies.value = UiState.ListMovies(it)
         }
     }
@@ -38,11 +52,11 @@ class MoviesViewModel : ViewModel() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
 
-                val moviesTemporal = moviesss
+                val moviesTemporal = movieList
 
                 val favoriteMovies: List<Movie>? =
                     moviesTemporal?.filter { it.favorite }
-                Log.i("peliculas", "peliculas favoritas enviadas $moviesss")
+                Log.i("peliculas", "peliculas favoritas enviadas $movieList")
                 _movies.postValue(UiState.FavoriteMovies(favoriteMovies ?: listOf()))
 
             }
@@ -51,12 +65,16 @@ class MoviesViewModel : ViewModel() {
     }
 
     fun changeStateFavorite(idMovie: Int, favorite: Boolean, isFavoriteFragment:Boolean) {
-        val movie = moviesss?.filter { movie: Movie -> movie.id == idMovie }
-        movie?.get(0)?.favorite = favorite
+        viewModelScope.launch(Dispatchers.IO) {
+            val movie = movieList?.filter { movie: Movie -> movie.id == idMovie }
+            movie?.get(0)?.favorite = favorite
+            movie?.get(0)?.let { movieRepository.updateMovie(it) }
 
-        if(isFavoriteFragment){
-        _movies.value = moviesss.let { UiState.FavoriteMovies(movies = it?.filter { it.favorite } ?: listOf()) }
+            if(isFavoriteFragment){
+                _movies.postValue(movieList.let { UiState.FavoriteMovies(movies = it?.filter { it.favorite } ?: listOf()) })
+            }
         }
+
        //_movies.value = UiState.ListMovies(movies = movies)
     }
 

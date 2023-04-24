@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.model
+package com.softwarejourneys.tallersergio.ui.movies.model
 
 import android.util.Log
 import retrofit2.Call

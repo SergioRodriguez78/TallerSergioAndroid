@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.model
+package com.softwarejourneys.tallersergio.ui.movies.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

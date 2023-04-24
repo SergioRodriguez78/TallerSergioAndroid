@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.movies.FavoritesMoviesFragment"
+    tools:context=".ui.movies.fragments.FavoritesMoviesFragment"
     android:orientation="vertical">
 
 
@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Imagen"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/nameMovie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="nombre"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/durationMovie"
         app:layout_constraintStart_toEndOf="@id/imageMovie"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="duracion"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintStart_toEndOf="@id/nameMovie"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Favorito"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/durationMovie"
         app:layout_constraintTop_toTopOf="parent" />

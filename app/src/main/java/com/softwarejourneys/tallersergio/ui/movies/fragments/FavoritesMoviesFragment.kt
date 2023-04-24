@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.ui.movies
+package com.softwarejourneys.tallersergio.ui.movies.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.softwarejourneys.tallersergio.ui.adapter.MoviesAdapter
+import com.softwarejourneys.tallersergio.ui.movies.adapter.MoviesAdapter
 
 import com.softwarejourneys.tallersergio.databinding.FragmentFavoritesMoviesBinding
+import com.softwarejourneys.tallersergio.ui.movies.LogicFavoritesClick
+import com.softwarejourneys.tallersergio.ui.movies.MoviesViewModel
+import com.softwarejourneys.tallersergio.ui.movies.UiState
 
 
 class FavoritesMoviesFragment : Fragment(), LogicFavoritesClick {

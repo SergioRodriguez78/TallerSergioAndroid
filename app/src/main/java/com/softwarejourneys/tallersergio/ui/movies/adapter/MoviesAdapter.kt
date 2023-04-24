@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.ui.adapter
+package com.softwarejourneys.tallersergio.ui.movies.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.softwarejourneys.tallersergio.R
-import com.softwarejourneys.tallersergio.model.Movie
+import com.softwarejourneys.tallersergio.ui.movies.model.Movie
 import com.softwarejourneys.tallersergio.ui.movies.LogicFavoritesClick
 
 

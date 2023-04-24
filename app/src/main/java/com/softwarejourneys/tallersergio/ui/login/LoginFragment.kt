@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.softwarejourneys.tallersergio.R
 
 import com.softwarejourneys.tallersergio.databinding.FragmentLoginBinding
-import com.softwarejourneys.tallersergio.ui.movies.ContainerMoviesFragment
+import com.softwarejourneys.tallersergio.ui.movies.fragments.ContainerMoviesFragment
 
 
 class LoginFragment : Fragment() {
@@ -38,7 +38,7 @@ class LoginFragment : Fragment() {
         val containerMoviesFragment = ContainerMoviesFragment()
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
 
-        transaction.replace(R.id.principal, containerMoviesFragment)
+        transaction.replace(R.id.principal, containerMoviesFragment).addToBackStack(null)
         transaction.commit()
 
     }

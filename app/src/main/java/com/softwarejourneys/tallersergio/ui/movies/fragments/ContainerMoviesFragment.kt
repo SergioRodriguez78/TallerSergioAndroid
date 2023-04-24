@@ -1,4 +1,4 @@
-package com.softwarejourneys.tallersergio.ui.movies
+package com.softwarejourneys.tallersergio.ui.movies.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.softwarejourneys.tallersergio.R
 import com.softwarejourneys.tallersergio.databinding.FragmentContainerMoviesBinding
+import com.softwarejourneys.tallersergio.ui.movies.MoviesViewModel
 
 
 class ContainerMoviesFragment : Fragment() {
@@ -24,7 +26,9 @@ class ContainerMoviesFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = viewBinding.root
 
+        moviesViewModel.initDatabase(requireContext())
         moviesViewModel.getAllMoviesFirstTime()
+
 
         //Iniciar movies second
         val moviesSecond = MoviesFragment()
@@ -35,9 +39,13 @@ class ContainerMoviesFragment : Fragment() {
 
         viewBinding.buttonFavorites.setOnClickListener {
             changeFragmentFavorite()
+            viewBinding.buttonFavorites.setBackgroundColor(resources.getColor(R.color.purple_500))
+            viewBinding.buttonMovies.setBackgroundColor(resources.getColor(R.color.purple_200))
         }
         viewBinding.buttonMovies.setOnClickListener {
             changeFragmentMovies()
+            viewBinding.buttonMovies.setBackgroundColor(resources.getColor(R.color.purple_500))
+            viewBinding.buttonFavorites.setBackgroundColor(resources.getColor(R.color.purple_200))
         }
         Log.i("pruebaS", "En el onCreateView del PELICULAS")
         return view
