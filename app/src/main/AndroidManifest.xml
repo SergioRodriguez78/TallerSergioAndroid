@@ -14,10 +14,10 @@
         android:theme="@style/Theme.TallerSergio"
         tools:targetApi="31">
         <activity
-            android:name=".pruebaRetrofit"
+            android:name=".compose.MoviesCompose"
             android:exported="false"
-            android:label="@string/title_activity_prueba_retrofit"
-            android:theme="@style/Theme.TallerSergio.NoActionBar" />
+            android:label="@string/title_activity_movies_compose"
+            android:theme="@style/Theme.TallerSergio" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="true">
@@ -29,7 +29,10 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
+        <activity
+            android:name=".compose.composeActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -21,10 +21,10 @@ class MoviesAdapter(private val movies: List<Movie>?, private val listener: Logi
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val imageUrl = view.findViewById<ImageView>(R.id.imageView)
-        val nameMovie = view.findViewById<TextView>(R.id.nameView)
-        val durationMovie = view.findViewById<TextView>(R.id.durationView)
-        val checkBox = view.findViewById<CheckBox>(R.id.switchView)
+        val imageUrl: ImageView = view.findViewById<ImageView>(R.id.imageView)
+        val nameMovie: TextView = view.findViewById<TextView>(R.id.nameView)
+        val durationMovie: TextView = view.findViewById<TextView>(R.id.durationView)
+        val checkBox: CheckBox = view.findViewById<CheckBox>(R.id.switchView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

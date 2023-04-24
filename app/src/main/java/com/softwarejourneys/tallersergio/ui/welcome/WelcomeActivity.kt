@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.softwarejourneys.tallersergio.compose.composeActivity
 import com.softwarejourneys.tallersergio.databinding.ActivityWelcomeBinding
 import com.softwarejourneys.tallersergio.ui.movies.model.MoviesService
 import com.softwarejourneys.tallersergio.ui.MainActivity
@@ -20,14 +21,23 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         viewBinding.welcomeButton.setOnClickListener {
-            changeActivity(viewBinding.welcomeButton)
+            changeActivity()
             Log.i("pruebaS", "En el oncreate")
+        }
+
+        viewBinding.startCompose.setOnClickListener {
+
+            startCompose()
         }
     }
 
-    fun changeActivity(view: View) {
+    fun changeActivity() {
         val intent = Intent(this, MainActivity::class.java)
 
+        startActivity(intent)
+    }
+    fun startCompose(){
+        val intent= Intent(this, composeActivity::class.java)
         startActivity(intent)
     }
 

@@ -16,7 +16,7 @@ import com.softwarejourneys.tallersergio.ui.movies.MoviesViewModel
 class ContainerMoviesFragment : Fragment() {
 
     private lateinit var viewBinding: FragmentContainerMoviesBinding
-    val moviesViewModel: MoviesViewModel by activityViewModels()
+    private val moviesViewModel: MoviesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

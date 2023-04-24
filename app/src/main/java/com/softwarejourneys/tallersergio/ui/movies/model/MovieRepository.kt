@@ -9,7 +9,7 @@ class MovieRepository(private var dataBase: AppDatabase) {
 
 
 
-    suspend fun getAllFromService():List<Movie>?{
+    private suspend fun getAllFromService():List<Movie>?{
         return moviesService.moviesList()
     }
 

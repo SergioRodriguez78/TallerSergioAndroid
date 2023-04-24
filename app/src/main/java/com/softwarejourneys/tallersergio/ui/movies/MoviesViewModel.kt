@@ -21,7 +21,7 @@ class MoviesViewModel : ViewModel() {
 
     private var _movies = MutableLiveData<UiState>()
     val movie: LiveData<UiState> = _movies
-    private var movieList: List<Movie>? = null
+     var movieList: List<Movie>? = null
     private lateinit var movieRepository:MovieRepository
     
 
@@ -30,6 +30,8 @@ class MoviesViewModel : ViewModel() {
             dataBase= Room.databaseBuilder(context, AppDatabase::class.java, "AppDatabase").build()
         )
     }
+
+    suspend fun giveMovies()=  movieRepository.getAllFromDatabase()
     fun getAllMoviesFirstTime() {
         viewModelScope.launch(Dispatchers.IO) {
 

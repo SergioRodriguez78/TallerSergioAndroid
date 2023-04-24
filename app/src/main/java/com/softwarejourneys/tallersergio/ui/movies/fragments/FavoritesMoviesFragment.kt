@@ -19,7 +19,7 @@ import com.softwarejourneys.tallersergio.ui.movies.UiState
 class FavoritesMoviesFragment : Fragment(), LogicFavoritesClick {
 
     private lateinit var viewBinding: FragmentFavoritesMoviesBinding
-    val moviesViewModel: MoviesViewModel by activityViewModels()
+    private val moviesViewModel: MoviesViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
